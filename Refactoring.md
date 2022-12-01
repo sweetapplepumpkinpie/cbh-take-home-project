@@ -9,3 +9,7 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+If there is no input then you should get `TRIVIAL_PARTITION_KEY`. And if the input has `partitionKey` key there will be two possible results.
+If the value of `partitionKey` or the stringfied result of the `partitionKey` is longer than 256, then you should get hashed `event.partitionKey`.
+Else you should get `event.partitionKey` or stringfied `event.partitionKey`. Other wise you can get hashed stringfied `event`.
